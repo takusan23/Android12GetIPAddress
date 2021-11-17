@@ -63,8 +63,7 @@ class MainActivity : AppCompatActivity() {
             .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
             .build()
         // コールバック
-        val networkCallback: ConnectivityManager.NetworkCallback
-        networkCallback = object : ConnectivityManager.NetworkCallback() {
+        val networkCallback = object : ConnectivityManager.NetworkCallback() {
             override fun onCapabilitiesChanged(network: Network, networkCapabilities: NetworkCapabilities) {
                 super.onCapabilitiesChanged(network, networkCapabilities)
                 val linkProperties = connectivityManager.getLinkProperties(network)
